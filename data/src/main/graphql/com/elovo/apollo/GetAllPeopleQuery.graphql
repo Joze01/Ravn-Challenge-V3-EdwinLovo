@@ -1,0 +1,22 @@
+query GetAllPeopleQuery($pageSize: Int!, $endCursor: String!){
+    allPeople(first: $pageSize, after: $endCursor) {
+        people {
+            id
+            name
+            homeworld {
+                id
+                name
+            }
+            species {
+                id
+                name
+            }
+        }
+        pageInfo {
+            startCursor
+            endCursor
+            hasNextPage
+            hasPreviousPage
+        }
+    }
+}

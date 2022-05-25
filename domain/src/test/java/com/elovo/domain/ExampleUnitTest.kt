@@ -1,4 +1,4 @@
-package com.elovo.ravnchallenge
+package com.elovo.domain
 
 import org.junit.Assert.*
 import org.junit.Test

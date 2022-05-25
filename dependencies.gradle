@@ -1,0 +1,100 @@
+ext {
+
+    // Global versions:
+    compile_sdk_version = 32
+    min_sdk_version = 23
+    target_sdk_version = 32
+
+    // Common dependencies
+    core_ktx_version = '1.7.0'
+    appcompat_version = '1.4.1'
+    material_version = '1.5.0'
+    lifecycle_runtime_version = '2.4.1'
+    gradle_version = '7.0.4'
+    kotlin_plugin_version = "1.6.10"
+
+    // Hilt
+    hilt_version = '2.41'
+    hilt_compiler_version = '2.41'
+    hilt_plugin_version = "2.40.5"
+    hilt_navigation_compose_version = '1.0.0'
+
+    // Compose
+    compose_version = '1.1.1'
+    activity_compose_version = "1.4.0"
+    lifecycle_version = '2.4.1'
+    navigation_version = '2.4.2'
+    paging_compose_version = "1.0.0-alpha14"
+
+    // Apollo Dependencies
+    apollo_version = '3.0.0'
+
+    // Okhttp Logger
+    okhttp_interceptor_version = "4.9.3"
+
+    // Gradle tasks
+    ktlint_plugin_version = "10.2.0"
+    detekt_version = "1.19.0"
+    kover_version = "0.5.0"
+
+    // Room
+    room_version = '2.4.2'
+
+    // Gson
+    gson_version = '2.9.0'
+
+    // GraphQL client dependencies
+    apollo = [
+            apollo_runtime: "com.apollographql.apollo3:apollo-runtime:${apollo_version}",
+            okhttp_loggin_interceptor: "com.squareup.okhttp3:logging-interceptor:${okhttp_interceptor_version}"
+    ]
+
+    // Common:
+    common = [
+            core_ktlx: "androidx.core:core-ktx:${core_ktx_version}",
+            appcompat: "androidx.appcompat:appcompat:${appcompat_version}",
+            material: "com.google.android.material:material:${material_version}",
+            lifecycle_runtime: "androidx.lifecycle:lifecycle-runtime-ktx:${lifecycle_runtime_version}"
+    ]
+
+    // Compose
+    compose = [
+            compose_ui: "androidx.compose.ui:ui:${compose_version}",
+            compose_material: "androidx.compose.material:material:${compose_version}",
+            compose_preview_tool: "androidx.compose.ui:ui-tooling-preview:${compose_version}",
+            activity_compose: "androidx.activity:activity-compose:${activity_compose_version}",
+            compose_livedata: "androidx.compose.runtime:runtime-livedata:${compose_version}",
+            compose_viewmodel: "androidx.lifecycle:lifecycle-viewmodel-compose:${lifecycle_version}",
+            viewModel_ktx: "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycle_version}",
+            navigation_compose: "androidx.navigation:navigation-compose:${navigation_version}",
+            extended_icons: "androidx.compose.material:material-icons-extended:${compose_version}",
+            paging_compose: "androidx.paging:paging-compose:${paging_compose_version}"
+    ]
+
+    //  Hilt
+    dependency_injection = [
+            hilt: "com.google.dagger:hilt-android:${hilt_version}",
+            hilt_compiler: "com.google.dagger:hilt-compiler:${hilt_compiler_version}",
+            hilt_compose_navigation: "androidx.hilt:hilt-navigation-compose:${hilt_navigation_compose_version}"
+    ]
+
+    classpath = [
+            gradle_plugin: "com.android.tools.build:gradle:${gradle_version}",
+            kotlin_plugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_plugin_version}",
+            apollo_plugin: "com.apollographql.apollo3:apollo-gradle-plugin:${apollo_version}",
+            hilt_plugin: "com.google.dagger:hilt-android-gradle-plugin:${hilt_plugin_version}",
+            ktlint_plugin: "org.jlleitschuh.gradle:ktlint-gradle:${ktlint_plugin_version}",
+            detekt_plugin: "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${detekt_version}"
+    ]
+
+    room = [
+            runtime_room: "androidx.room:room-runtime:${room_version}",
+            room_compiler: "androidx.room:room-compiler:${room_version}",
+            ktx_room: "androidx.room:room-ktx:${room_version}",
+            paging_room: "androidx.room:room-paging:${room_version}"
+    ]
+
+    gson = [
+            gson_converter : "com.google.code.gson:gson:${gson_version}"
+    ]
+}
