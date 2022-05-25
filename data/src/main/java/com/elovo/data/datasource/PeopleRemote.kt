@@ -1,14 +1,16 @@
 package com.elovo.data.datasource
 
+import com.elovo.data.remote.model.AllPeopleModel
+import com.elovo.data.remote.model.PersonModel
 import com.elovo.data.util.RavnResult
 
 interface PeopleRemote {
     suspend fun getAllPeople(
         pageSize: Int,
         endCursor: String
-    ): RavnResult<List<Any>>
+    ): RavnResult<AllPeopleModel?>
 
     suspend fun getPerson(
         personId: String
-    ): RavnResult<Any>
+    ): RavnResult<PersonModel?>
 }

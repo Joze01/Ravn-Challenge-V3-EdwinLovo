@@ -4,6 +4,7 @@ import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.network.okHttpClient
 import com.elovo.data.BuildConfig
 import com.elovo.data.remote.BASE_URL
+import com.elovo.data.remote.SwapiApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -49,4 +50,8 @@ internal class ApiModule {
             .serverUrl(BASE_URL)
             .okHttpClient(okHttpClient)
             .build()
+
+    @Provides
+    @Singleton
+    fun swapiApiProvider(apolloClient: ApolloClient): SwapiApi = SwapiApi(apolloClient)
 }
