@@ -1,4 +1,4 @@
-package com.elovo.ravnchallenge.presentation.people
+package com.elovo.ravnchallenge.presentation.ui.people
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

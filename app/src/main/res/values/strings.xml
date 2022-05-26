@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RavnChallenge</string>
+
+    <!-- Bottom Bar -->
+    <string name="bb_people_label">People</string>
+    <string name="bb_favorites_label">Favorites</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_bottom_tab">%s bottom tab</string>
+
 </resources>
