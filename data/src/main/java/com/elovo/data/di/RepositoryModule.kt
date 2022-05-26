@@ -3,6 +3,7 @@ package com.elovo.data.di
 import com.elovo.data.datasource.PeopleRemote
 import com.elovo.data.db.RavnDB
 import com.elovo.data.repository.PersonRepositoryImpl
+import com.elovo.domain.interactor.repository.PersonRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,5 +19,5 @@ object RepositoryModule {
     fun personRepositoryProvider(
         peopleRemote: PeopleRemote,
         ravnDB: RavnDB
-    ) = PersonRepositoryImpl(peopleRemote, ravnDB)
+    ): PersonRepository = PersonRepositoryImpl(peopleRemote, ravnDB)
 }

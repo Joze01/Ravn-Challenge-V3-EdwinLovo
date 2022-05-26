@@ -20,7 +20,7 @@ class PersonRepositoryImpl @Inject constructor(
     private val ravnDB: RavnDB
 ) : PersonRepository, BaseRepository() {
 
-    @OptIn(ExperimentalPagingApi::class)
+    @ExperimentalPagingApi
     override fun getPeople(): Flow<PagingData<Person>> =
         Pager(
             config = PagingConfig(pageSize = 5),
