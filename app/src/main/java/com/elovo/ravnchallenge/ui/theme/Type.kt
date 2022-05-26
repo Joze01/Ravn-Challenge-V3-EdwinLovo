@@ -26,22 +26,22 @@ val Typography = Typography(
 )
 
 object RavnTypography {
-    private val h2Default = TextStyle(
+    val h2Default = TextStyle(
         fontFamily = SFProDisplay,
         fontWeight = FontWeight.Bold,
         fontSize = 17.sp,
         lineHeight = 20.sp,
         color = DarkTextColor
     )
-    private val h2LosEmphasis = h2Default.copy(color = LightTextColor)
-    private val h2HighEmphasis = h2Default.copy(color = EmphasisTextColor)
+    val h2LosEmphasis = h2Default.copy(color = LightTextColor)
+    val h2HighEmphasis = h2Default.copy(color = EmphasisTextColor)
 
-    private val p1Default = TextStyle(
+    val p1Default = TextStyle(
         fontFamily = SFProDisplay,
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
         lineHeight = 16.sp,
         color = DarkTextColor
     )
-    private val p1LowEmphasis = p1Default.copy(color = LightTextColor)
+    val p1LowEmphasis = p1Default.copy(color = LightTextColor)
 }

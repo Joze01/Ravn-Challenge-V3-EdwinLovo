@@ -7,5 +7,14 @@
 
     <!-- Content descriptions -->
     <string name="cd_bottom_tab">%s bottom tab</string>
+    <string name="cd_go_back">Go back button</string>
+
+    <!-- People -->
+    <string name="title_people">People</string>
+
+    <!-- Favorites -->
+    <string name="title_favorites">Favorites</string>
+
+    <!-- Person -->
 
 </resources>
