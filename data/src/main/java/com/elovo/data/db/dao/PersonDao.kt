@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.Flow
 interface PersonDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPeople(people: List<PersonEntity>): Array<Long>
+    suspend fun insertPerson(people: PersonEntity)
 
     @Update
     suspend fun updatePerson(personEntity: PersonEntity)

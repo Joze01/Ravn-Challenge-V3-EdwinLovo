@@ -13,7 +13,7 @@ interface PersonRemoteKeysDao {
     suspend fun getRemoteKeys(id: String): PersonRemoteKeys
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addAllPersonRemoteKeys(personRemoteKeys: List<PersonRemoteKeys>)
+    suspend fun addPersonRemoteKeys(personRemoteKeys: PersonRemoteKeys)
 
     @Query("DELETE FROM PersonRemoteKeys")
     suspend fun deleteAllPersonRemoteKeys()
