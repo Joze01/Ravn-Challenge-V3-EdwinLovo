@@ -53,6 +53,9 @@ dependencies {
     implementation rootProject.ext.dependency_injection.hilt
     kapt rootProject.ext.dependency_injection.hilt_compiler
 
+    // Gson
+    implementation rootProject.ext.gson.gson_converter
+
 }
 
 apollo {

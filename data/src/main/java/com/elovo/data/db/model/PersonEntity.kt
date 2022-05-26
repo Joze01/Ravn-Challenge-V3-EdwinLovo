@@ -1,9 +1,16 @@
-package com.elovo.data.remote.model
+package com.elovo.data.db.model
 
-import com.elovo.data.db.model.PersonEntity
-import com.elovo.data.mapper.RoomMapper
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.elovo.data.mapper.ApiModelMapper
+import com.elovo.data.remote.model.HomeworldModel
+import com.elovo.data.remote.model.PersonModel
+import com.elovo.data.remote.model.SpeciesModel
+import com.elovo.data.remote.model.VehicleConnectionModel
 
-data class PersonModel(
+@Entity
+data class PersonEntity(
+    @PrimaryKey
     val id: String,
     val name: String?,
     val eyeColor: String?,
@@ -13,9 +20,9 @@ data class PersonModel(
     val vehicleConnection: VehicleConnectionModel?,
     val homeworld: HomeworldModel?,
     val species: SpeciesModel?
-) : RoomMapper<PersonEntity> {
+) : ApiModelMapper<PersonModel> {
 
-    override fun mapToRoomEntity() = PersonEntity(
+    override fun mapToApiModel(): PersonModel = PersonModel(
         id = id,
         name = name,
         eyeColor = eyeColor,
