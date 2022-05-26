@@ -1,4 +1,4 @@
-package com.elovo.data.util
+package com.elovo.domain.common
 
 sealed class DataSourceException(
     val exception: Any?

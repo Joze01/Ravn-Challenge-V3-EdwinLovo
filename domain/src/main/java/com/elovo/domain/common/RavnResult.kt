@@ -1,4 +1,4 @@
-package com.elovo.data.util
+package com.elovo.domain.common
 
 sealed class RavnResult<out T> {
     data class Success<out T>(val data: T) : RavnResult<T>()

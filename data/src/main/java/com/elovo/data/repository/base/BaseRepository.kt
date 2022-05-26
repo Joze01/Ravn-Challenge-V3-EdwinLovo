@@ -1,7 +1,7 @@
 package com.elovo.data.repository.base
 
 import com.elovo.data.mapper.ApiModelMapper
-import com.elovo.data.util.RavnResult
+import com.elovo.domain.common.RavnResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart

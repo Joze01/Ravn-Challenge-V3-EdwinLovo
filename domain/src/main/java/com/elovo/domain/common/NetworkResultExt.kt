@@ -1,4 +1,4 @@
-package com.elovo.data.util
+package com.elovo.domain.common
 
 inline fun <T, R> RavnResult<T>.onMapping(action: (T) -> RavnResult<R>): RavnResult<R> {
     return when (this) {

@@ -1,12 +1,9 @@
 package com.elovo.domain.interactor.repository
 
-import androidx.paging.ExperimentalPagingApi
-import androidx.paging.PagingData
-import com.elovo.domain.model.Person
-import kotlinx.coroutines.flow.Flow
+import com.elovo.domain.common.RavnResult
+import com.elovo.domain.model.AllPeople
 
 interface PersonRepository {
 
-    @ExperimentalPagingApi
-    fun getPeople(): Flow<PagingData<Person>>
+    suspend fun getAllPeople(endCursor: String): RavnResult<AllPeople>
 }

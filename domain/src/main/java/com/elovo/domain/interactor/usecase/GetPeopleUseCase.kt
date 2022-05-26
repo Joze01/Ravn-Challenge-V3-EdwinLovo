@@ -1,12 +1,9 @@
 package com.elovo.domain.interactor.usecase
 
-import androidx.paging.ExperimentalPagingApi
-import androidx.paging.PagingData
-import com.elovo.domain.model.Person
-import kotlinx.coroutines.flow.Flow
+import com.elovo.domain.common.RavnResult
+import com.elovo.domain.model.AllPeople
 
 interface GetPeopleUseCase {
 
-    @ExperimentalPagingApi
-    operator fun invoke(): Flow<PagingData<Person>>
+    suspend operator fun invoke(endCursor: String): RavnResult<AllPeople>
 }

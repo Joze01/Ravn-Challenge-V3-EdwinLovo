@@ -1,7 +1,6 @@
 package com.elovo.ravnchallenge.presentation.ui.common
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -20,7 +19,7 @@ fun BodyLayout(
     header: @Composable () -> Unit,
     body: @Composable () -> Unit
 ) {
-    Box(modifier = Modifier.fillMaxSize()) {
+    Column(modifier = Modifier.fillMaxSize()) {
         header()
         Column(
             modifier = modifier
