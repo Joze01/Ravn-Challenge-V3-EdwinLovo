@@ -16,14 +16,14 @@ import com.elovo.data.util.onSuccess
 class PersonRemoteMediator(
     private val peopleRemote: PeopleRemote,
     private val ravnDB: RavnDB
-) : RemoteMediator<String, PersonEntity>() {
+) : RemoteMediator<Int, PersonEntity>() {
 
     private val personDao = ravnDB.personDao()
     private val personRemoteKeysDao = ravnDB.personRemoteKeysDao()
 
     override suspend fun load(
         loadType: LoadType,
-        state: PagingState<String, PersonEntity>
+        state: PagingState<Int, PersonEntity>
     ): MediatorResult {
         var mediatorResult: MediatorResult = MediatorResult.Success(false)
 
@@ -82,7 +82,7 @@ class PersonRemoteMediator(
     }
 
     private suspend fun getRemoteKeyClosestToCurrentPosition(
-        state: PagingState<String, PersonEntity>
+        state: PagingState<Int, PersonEntity>
     ): PersonRemoteKeys? {
         return state.anchorPosition?.let { position ->
             state.closestItemToPosition(position)?.id?.let { id ->
@@ -92,7 +92,7 @@ class PersonRemoteMediator(
     }
 
     private suspend fun getRemoteKeyForFirstItem(
-        state: PagingState<String, PersonEntity>
+        state: PagingState<Int, PersonEntity>
     ): PersonRemoteKeys? {
         return state.pages.firstOrNull { it.data.isNotEmpty() }?.data?.firstOrNull()
             ?.let { person ->
@@ -101,7 +101,7 @@ class PersonRemoteMediator(
     }
 
     private suspend fun getRemoteKeyForLastItem(
-        state: PagingState<String, PersonEntity>
+        state: PagingState<Int, PersonEntity>
     ): PersonRemoteKeys? {
         return state.pages.lastOrNull { it.data.isNotEmpty() }?.data?.lastOrNull()
             ?.let { person ->

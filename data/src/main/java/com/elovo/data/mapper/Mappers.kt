@@ -7,3 +7,7 @@ interface RoomMapper<out T : Any> {
 interface ApiModelMapper<out T : Any> {
     fun mapToApiModel(): T
 }
+
+interface DomainModelMapper<out T : Any> {
+    fun mapToDomainModel(): T
+}

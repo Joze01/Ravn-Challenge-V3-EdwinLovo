@@ -36,6 +36,8 @@ android {
 
 dependencies {
 
+    implementation project(":domain")
+
     // Apollo
     api rootProject.ext.apollo.apollo_runtime
 

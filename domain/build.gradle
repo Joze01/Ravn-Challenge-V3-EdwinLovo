@@ -38,4 +38,6 @@ dependencies {
     // Hilt Dependency Injection
     implementation rootProject.ext.dependency_injection.hilt
     kapt rootProject.ext.dependency_injection.hilt_compiler
+
+    implementation rootProject.ext.compose.paging_compose
 }
