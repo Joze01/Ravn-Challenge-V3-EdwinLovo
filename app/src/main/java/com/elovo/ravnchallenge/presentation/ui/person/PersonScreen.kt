@@ -20,6 +20,7 @@ fun PersonScreen(
     val context = LocalContext.current
 
     LaunchedEffect(key1 = true) {
+        viewModel.getPerson()
         viewModel.uiEvent.collect { event ->
             when (event) {
                 is UiEvent.Navigate -> onNavigate(event)
@@ -35,7 +36,7 @@ fun PersonScreen(
     BodyLayout(
         header = {
             RavnAppBar(
-                title = viewModel.personId,
+                title = viewModel.person?.name ?: "",
                 goBack = { viewModel.goBack() }
             )
         }
