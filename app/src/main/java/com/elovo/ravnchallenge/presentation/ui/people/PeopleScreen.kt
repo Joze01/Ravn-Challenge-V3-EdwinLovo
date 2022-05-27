@@ -12,6 +12,7 @@ import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.elovo.ravnchallenge.R
+import com.elovo.ravnchallenge.presentation.navigation.Screen
 import com.elovo.ravnchallenge.presentation.ui.common.BodyLayout
 import com.elovo.ravnchallenge.presentation.ui.common.LoadingCell
 import com.elovo.ravnchallenge.presentation.ui.common.NoticeCell
@@ -52,7 +53,11 @@ fun PeopleScreen(
                 person?.let {
                     PersonCell(
                         person = it,
-                        onClick = { }
+                        onClick = { personId ->
+                            viewModel.sendUiEvent(
+                                UiEvent.Navigate("${Screen.PersonScreen.route}/$personId")
+                            )
+                        }
                     )
                 }
             }
