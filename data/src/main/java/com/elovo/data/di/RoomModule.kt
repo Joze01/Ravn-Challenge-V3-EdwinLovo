@@ -26,7 +26,4 @@ class RoomModule {
 
     @Provides
     fun personDaoProvider(db: RavnDB) = db.personDao()
-
-    @Provides
-    fun personRemoteKeysDaoProvider(db: RavnDB) = db.personRemoteKeysDao()
 }
