@@ -13,10 +13,11 @@
     <string name="cd_remove_favorite">Remove from favorites</string>
 
     <!-- People -->
-    <string name="title_people">People</string>
+    <string name="title_people">People of Star Wars</string>
 
     <!-- Favorites -->
     <string name="title_favorites">Favorites</string>
+    <string name="favorites_empty">You don\'t have favorites</string>
 
     <!-- Person -->
     <string name="person_human">Human</string>

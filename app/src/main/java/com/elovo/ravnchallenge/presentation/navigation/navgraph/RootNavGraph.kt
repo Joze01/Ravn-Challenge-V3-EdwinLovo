@@ -4,7 +4,9 @@ import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.paging.ExperimentalPagingApi
 
+@ExperimentalPagingApi
 @Composable
 fun Navigation(navController: NavHostController, scaffoldState: ScaffoldState) {
     NavHost(

@@ -9,11 +9,13 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import androidx.paging.ExperimentalPagingApi
 import com.elovo.ravnchallenge.presentation.navigation.navgraph.Navigation
 import com.elovo.ravnchallenge.presentation.ui.common.bottombar.BottomBarView
 import com.elovo.ravnchallenge.ui.theme.RavnChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
+@ExperimentalPagingApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

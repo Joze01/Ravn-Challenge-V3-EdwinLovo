@@ -81,4 +81,7 @@ dependencies {
 
     // Gson
     implementation rootProject.ext.gson.gson_converter
+
+    // Accompanist
+    implementation rootProject.ext.accompanist.swipe_refresh
 }

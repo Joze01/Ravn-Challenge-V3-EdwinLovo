@@ -43,6 +43,9 @@ ext {
     // Gson
     gson_version = '2.9.0'
 
+    // Accompanist
+    swipe_refresh_version = '0.24.9-beta'
+
     // GraphQL client dependencies
     apollo = [
             apollo_runtime: "com.apollographql.apollo3:apollo-runtime:${apollo_version}",
@@ -96,5 +99,9 @@ ext {
 
     gson = [
             gson_converter : "com.google.code.gson:gson:${gson_version}"
+    ]
+
+    accompanist = [
+            swipe_refresh : "com.google.accompanist:accompanist-swiperefresh:${swipe_refresh_version}"
     ]
 }
