@@ -29,10 +29,13 @@
     <string name="person_birth_year">Birth Year</string>
     <string name="person_vehicles">Vehicles</string>
     <string name="person_no_vehicles">No vehicles found</string>
+    <string name="person_favorite_added">Added to favorites!</string>
+    <string name="person_favorite_removed">Removed from favorites!</string>
 
     <!-- Common -->
     <string name="common_no_internet">No internet connection</string>
     <string name="common_failed_to_load_data">Failed to Load Data</string>
     <string name="common_loading">Loading</string>
+    <string name="common_error">An error occurred</string>
 
 </resources>

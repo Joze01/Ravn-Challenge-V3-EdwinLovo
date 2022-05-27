@@ -106,6 +106,10 @@ fun PersonScreen(
 
 @Composable
 fun FavoriteButton(viewModel: PersonViewModel) {
+    val isFavorite = viewModel.person?.isFavorite ?: false
+    val text = if (isFavorite) R.string.cd_remove_favorite else R.string.cd_add_favorite
+    val icon = if (isFavorite) R.drawable.ic_favorite else R.drawable.ic_favorite_border
+
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -113,15 +117,15 @@ fun FavoriteButton(viewModel: PersonViewModel) {
         horizontalArrangement = Arrangement.Center
     ) {
         TextButton(
-            onClick = { /*TODO*/ }
+            onClick = { viewModel.onEvent(PersonEvent.OnUpdateFavoriteStatus(!isFavorite)) }
         ) {
             Icon(
-                imageVector = ImageVector.vectorResource(id = R.drawable.ic_favorite_border),
-                contentDescription = stringResource(id = R.string.cd_add_favorite)
+                imageVector = ImageVector.vectorResource(id = icon),
+                contentDescription = stringResource(id = text)
             )
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = stringResource(id = R.string.cd_add_favorite),
+                text = stringResource(id = text),
                 style = RavnTypography.p1Default
             )
         }
