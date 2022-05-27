@@ -20,6 +20,13 @@
     <string name="person_human">Human</string>
     <string name="person_from">%s from %s</string>
     <string name="person_unknown">Unknown</string>
+    <string name="person_general_info">General Information</string>
+    <string name="person_eye_color">Eye Color</string>
+    <string name="person_hair_color">Hair Color</string>
+    <string name="person_skin_color">Skin Color</string>
+    <string name="person_birth_year">Birth Year</string>
+    <string name="person_vehicles">Vehicles</string>
+    <string name="person_no_vehicles">No vehicles found</string>
 
     <!-- Common -->
     <string name="common_no_internet">No internet connection</string>
