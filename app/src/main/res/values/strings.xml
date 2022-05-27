@@ -23,5 +23,7 @@
 
     <!-- Common -->
     <string name="common_no_internet">No internet connection</string>
+    <string name="common_failed_to_load_data">Failed to Load Data</string>
+    <string name="common_loading">Loading</string>
 
 </resources>

@@ -8,10 +8,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.ExperimentalPagingApi
+import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.elovo.ravnchallenge.R
 import com.elovo.ravnchallenge.presentation.ui.common.BodyLayout
+import com.elovo.ravnchallenge.presentation.ui.common.LoadingCell
+import com.elovo.ravnchallenge.presentation.ui.common.NoticeCell
 import com.elovo.ravnchallenge.presentation.ui.common.RavnAppBar
 import com.elovo.ravnchallenge.presentation.ui.people.components.PersonCell
 import com.elovo.ravnchallenge.presentation.utils.UiEvent
@@ -51,6 +54,26 @@ fun PeopleScreen(
                         person = it,
                         onClick = { }
                     )
+                }
+            }
+            people.apply {
+                when {
+                    loadState.append is LoadState.Error ||
+                        loadState.refresh is LoadState.Error -> {
+                        item {
+                            NoticeCell(
+                                message = stringResource(id = R.string.common_failed_to_load_data)
+                            )
+                        }
+                    }
+                    loadState.append is LoadState.Loading ||
+                        loadState.refresh is LoadState.Loading -> {
+                        item {
+                            LoadingCell(
+                                message = stringResource(id = R.string.common_loading)
+                            )
+                        }
+                    }
                 }
             }
         }

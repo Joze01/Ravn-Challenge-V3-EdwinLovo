@@ -33,7 +33,7 @@ object RavnTypography {
         lineHeight = 20.sp,
         color = DarkTextColor
     )
-    val h2LosEmphasis = h2Default.copy(color = LightTextColor)
+    val h2LowEmphasis = h2Default.copy(color = LightTextColor)
     val h2HighEmphasis = h2Default.copy(color = EmphasisTextColor)
 
     val p1Default = TextStyle(
