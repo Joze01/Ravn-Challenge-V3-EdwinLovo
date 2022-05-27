@@ -8,6 +8,7 @@
     <!-- Content descriptions -->
     <string name="cd_bottom_tab">%s bottom tab</string>
     <string name="cd_go_back">Go back button</string>
+    <string name="cd_select_person">Go to %s details</string>
 
     <!-- People -->
     <string name="title_people">People</string>
@@ -16,5 +17,8 @@
     <string name="title_favorites">Favorites</string>
 
     <!-- Person -->
+    <string name="person_human">Human</string>
+    <string name="person_from">%s from %s</string>
+    <string name="person_unknown">Unknown</string>
 
 </resources>
