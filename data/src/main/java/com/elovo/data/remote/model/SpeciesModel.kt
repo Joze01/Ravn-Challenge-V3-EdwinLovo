@@ -1,6 +1,7 @@
 package com.elovo.data.remote.model
 
 import com.elovo.data.mapper.DomainModelMapper
+import com.elovo.data.util.GsonHelper
 import com.elovo.domain.model.Species
 
 data class SpeciesModel(
@@ -8,10 +9,7 @@ data class SpeciesModel(
     val name: String?
 ) : DomainModelMapper<Species> {
 
-    override fun mapToDomainModel() = Species(
-        id = id,
-        name = name
-    )
+    override fun mapToDomainModel(): Species = GsonHelper.parse(this)
 
     companion object {
         fun mapToModel(model: Species?): SpeciesModel =

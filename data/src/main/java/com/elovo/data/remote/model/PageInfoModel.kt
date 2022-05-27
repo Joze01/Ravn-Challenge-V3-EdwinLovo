@@ -1,6 +1,7 @@
 package com.elovo.data.remote.model
 
 import com.elovo.data.mapper.DomainModelMapper
+import com.elovo.data.util.GsonHelper
 import com.elovo.domain.model.PageInfo
 
 data class PageInfoModel(
@@ -10,10 +11,5 @@ data class PageInfoModel(
     val hasPreviousPage: Boolean
 ) : DomainModelMapper<PageInfo> {
 
-    override fun mapToDomainModel() = PageInfo(
-        startCursor = startCursor,
-        endCursor = endCursor,
-        hasNextPage = hasNextPage,
-        hasPreviousPage = hasPreviousPage
-    )
+    override fun mapToDomainModel(): PageInfo = GsonHelper.parse(this)
 }

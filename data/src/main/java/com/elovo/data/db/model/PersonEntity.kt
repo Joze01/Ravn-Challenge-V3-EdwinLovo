@@ -7,6 +7,7 @@ import com.elovo.data.remote.model.HomeworldModel
 import com.elovo.data.remote.model.PersonModel
 import com.elovo.data.remote.model.SpeciesModel
 import com.elovo.data.remote.model.VehicleConnectionModel
+import com.elovo.data.util.GsonHelper
 
 @Entity
 data class PersonEntity(
@@ -22,15 +23,5 @@ data class PersonEntity(
     val species: SpeciesModel?
 ) : ApiModelMapper<PersonModel> {
 
-    override fun mapToApiModel(): PersonModel = PersonModel(
-        id = id,
-        name = name,
-        eyeColor = eyeColor,
-        hairColor = hairColor,
-        skinColor = skinColor,
-        birthYear = birthYear,
-        vehicleConnection = vehicleConnection,
-        homeworld = homeworld,
-        species = species
-    )
+    override fun mapToApiModel(): PersonModel = GsonHelper.parse(this)
 }

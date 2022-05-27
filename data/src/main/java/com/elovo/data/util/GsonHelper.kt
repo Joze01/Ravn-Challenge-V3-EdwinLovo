@@ -13,4 +13,13 @@ object GsonHelper {
 
     inline fun <reified R> convertToListData(json: String): List<R> =
         gson.fromJson(json, object : TypeToken<List<R>>() {}.type)
+
+    inline fun <reified T> parse(src: Any): T {
+        with(Gson()) {
+            return fromJson(
+                toJson(src),
+                T::class.java
+            )
+        }
+    }
 }
