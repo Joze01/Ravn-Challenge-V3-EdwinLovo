@@ -21,4 +21,7 @@
     <string name="person_from">%s from %s</string>
     <string name="person_unknown">Unknown</string>
 
+    <!-- Common -->
+    <string name="common_no_internet">No internet connection</string>
+
 </resources>

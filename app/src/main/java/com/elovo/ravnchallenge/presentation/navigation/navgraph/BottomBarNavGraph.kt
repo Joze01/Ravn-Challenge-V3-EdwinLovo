@@ -20,7 +20,14 @@ fun NavGraphBuilder.bottomBarNavGraph(
         route = BOTTOM_BAR_ROUTE
     ) {
         composable(route = BottomBar.People.route) {
-            PeopleScreen()
+            PeopleScreen(
+                onNavigate = { uiEvent ->
+                    navController.navigate(uiEvent.route) {
+                        launchSingleTop = true
+                    }
+                },
+                scaffoldState = scaffoldState
+            )
         }
         composable(route = BottomBar.Favorites.route) {
             FavoritesScreen()
