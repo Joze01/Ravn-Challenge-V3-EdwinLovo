@@ -53,7 +53,13 @@ fun NavGraphBuilder.bottomBarNavGraph(
             )
         }
         composable(route = BottomBar.Favorites.route) {
-            FavoritesScreen()
+            FavoritesScreen(
+                onNavigate = { uiEvent ->
+                    navController.navigate(uiEvent.route) {
+                        launchSingleTop = true
+                    }
+                }
+            )
         }
     }
 }
