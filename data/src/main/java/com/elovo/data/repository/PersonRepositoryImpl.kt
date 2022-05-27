@@ -30,8 +30,11 @@ class PersonRepositoryImpl @Inject constructor(
                 RavnResult.Success(personModel.mapToDomainModel())
             },
             dbSaveAction = {
-                val person = PersonModel.mapToModel(it).mapToRoomEntity()
-                personDao.insertPerson(person)
+                val currentPersonData = personDao.getPerson(personId)
+                val newPersonData = PersonModel.mapToModel(it).mapToRoomEntity().apply {
+                    isFavorite = currentPersonData?.isFavorite
+                }
+                personDao.insertPerson(newPersonData)
             },
             dbGetAction = {
                 personDao.getPerson(personId)?.mapToApiModel()

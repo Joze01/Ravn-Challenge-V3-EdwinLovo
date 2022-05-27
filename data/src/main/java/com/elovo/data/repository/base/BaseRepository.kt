@@ -1,6 +1,8 @@
 package com.elovo.data.repository.base
 
 import com.elovo.data.mapper.DomainModelMapper
+import com.elovo.domain.common.DataSourceException
+import com.elovo.domain.common.RavnException
 import com.elovo.domain.common.RavnResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -42,8 +44,14 @@ abstract class BaseRepository {
             when (apiDataProvider) {
                 is RavnResult.Success -> {
                     apiDataProvider.data?.let {
-                        emit(RavnResult.Success(it))
                         dbSaveAction(it)
+                        dbGetAction()?.let { localPerson ->
+                            emit(RavnResult.Success(localPerson.mapToDomainModel()))
+                        } ?: emit(
+                            RavnResult.Error(
+                                DataSourceException.Unexpected(RavnException.UNKNOWN_ERROR)
+                            )
+                        )
                     }
                 }
                 is RavnResult.Error -> {
