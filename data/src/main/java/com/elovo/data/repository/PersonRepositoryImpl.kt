@@ -50,6 +50,11 @@ class PersonRepositoryImpl @Inject constructor(
         }
     }
 
+    override fun getAllFavorites(): Flow<RavnResult<List<Person>>> =
+        personDao.getFavorites().map { people ->
+            RavnResult.Success(people.map { it.mapToApiModel().mapToDomainModel() })
+        }
+
     companion object {
         const val PAGE_SIZE = 5
     }

@@ -28,4 +28,7 @@ interface PersonDao {
 
     @Query("SELECT * FROM PersonEntity")
     fun getPeople(): PagingSource<Int, PersonEntity>
+
+    @Query("SELECT * FROM PersonEntity WHERE isFavorite = :favorite")
+    fun getFavorites(favorite: Boolean = true): Flow<List<PersonEntity>>
 }

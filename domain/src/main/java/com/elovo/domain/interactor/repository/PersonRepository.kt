@@ -12,4 +12,6 @@ interface PersonRepository {
     suspend fun getPerson(personId: String): Flow<RavnResult<Person>>
 
     fun updateFavoriteStatus(personId: String, isFavorite: Boolean): Flow<RavnResult<Person>>
+
+    fun getAllFavorites(): Flow<RavnResult<List<Person>>>
 }

@@ -1,6 +1,8 @@
 package com.elovo.domain.di
 
 import com.elovo.domain.interactor.repository.PersonRepository
+import com.elovo.domain.interactor.usecase.GetFavoritesUseCase
+import com.elovo.domain.interactor.usecase.GetFavoritesUseCaseImpl
 import com.elovo.domain.interactor.usecase.GetPeopleUseCase
 import com.elovo.domain.interactor.usecase.GetPeopleUseCaseImpl
 import com.elovo.domain.interactor.usecase.GetPersonUseCase
@@ -32,4 +34,9 @@ object UseCaseModule {
     fun updateFavoriteStatusUseCaseProvider(
         personRepository: PersonRepository
     ): UpdateFavoriteStatusUseCase = UpdateFavoriteStatusUseCaseImpl(personRepository)
+
+    @Provides
+    @ViewModelScoped
+    fun getFavoritesUseCaseProvider(personRepository: PersonRepository): GetFavoritesUseCase =
+        GetFavoritesUseCaseImpl(personRepository)
 }
