@@ -1,7 +1,7 @@
 package com.elovo.data.di
 
 import com.elovo.data.datasource.PeopleRemote
-import com.elovo.data.db.RavnDB
+import com.elovo.data.db.dao.PersonDao
 import com.elovo.data.repository.PersonRepositoryImpl
 import com.elovo.domain.interactor.repository.PersonRepository
 import dagger.Module
@@ -18,6 +18,6 @@ object RepositoryModule {
     @Singleton
     fun personRepositoryProvider(
         peopleRemote: PeopleRemote,
-        ravnDB: RavnDB
-    ): PersonRepository = PersonRepositoryImpl(peopleRemote, ravnDB)
+        personDao: PersonDao
+    ): PersonRepository = PersonRepositoryImpl(peopleRemote, personDao)
 }

@@ -7,13 +7,12 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.elovo.data.db.model.PersonEntity
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PersonDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPerson(people: PersonEntity)
+    suspend fun insertPerson(personEntity: PersonEntity)
 
     @Update
     suspend fun updatePerson(personEntity: PersonEntity)
@@ -22,7 +21,7 @@ interface PersonDao {
     suspend fun deletePeople()
 
     @Query("SELECT * FROM PersonEntity where id = :id")
-    fun getPerson(id: String): Flow<PersonEntity?>
+    fun getPerson(id: String): PersonEntity?
 
     @Query("SELECT * FROM PersonEntity")
     fun getPeople(): PagingSource<Int, PersonEntity>

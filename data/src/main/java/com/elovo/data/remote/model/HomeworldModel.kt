@@ -12,4 +12,12 @@ data class HomeworldModel(
         id = id,
         name = name
     )
+
+    companion object {
+        fun mapToModel(model: Homeworld?): HomeworldModel =
+            HomeworldModel(
+                id = model?.id,
+                name = model?.name
+            )
+    }
 }

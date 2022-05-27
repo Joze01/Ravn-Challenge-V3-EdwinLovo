@@ -1,6 +1,6 @@
 package com.elovo.data.repository.base
 
-import com.elovo.data.mapper.ApiModelMapper
+import com.elovo.data.mapper.DomainModelMapper
 import com.elovo.domain.common.RavnResult
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -33,7 +33,7 @@ abstract class BaseRepository {
      * Use this if you need to cache data after fetching it from the api,
      * or retrieve something from cache
      */
-    protected suspend fun <T : Any, S : ApiModelMapper<T>> fetchData(
+    protected suspend fun <T : Any, S : DomainModelMapper<T>> fetchData(
         apiDataProvider: RavnResult<T?>,
         dbSaveAction: suspend (T) -> Unit,
         dbGetAction: suspend () -> S?
@@ -48,7 +48,7 @@ abstract class BaseRepository {
                 }
                 is RavnResult.Error -> {
                     dbGetAction()?.let {
-                        emit(RavnResult.Success(it.mapToApiModel()))
+                        emit(RavnResult.Success(it.mapToDomainModel()))
                     } ?: emit(RavnResult.Error(apiDataProvider.exception))
                 }
                 else -> {

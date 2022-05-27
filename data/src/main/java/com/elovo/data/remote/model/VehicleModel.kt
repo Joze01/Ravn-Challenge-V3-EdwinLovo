@@ -12,4 +12,12 @@ data class VehicleModel(
         id = id,
         name = name
     )
+
+    companion object {
+        fun mapToModel(model: Vehicle?): VehicleModel =
+            VehicleModel(
+                id = model?.id ?: "",
+                name = model?.name
+            )
+    }
 }

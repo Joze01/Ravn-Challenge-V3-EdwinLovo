@@ -12,4 +12,12 @@ data class SpeciesModel(
         id = id,
         name = name
     )
+
+    companion object {
+        fun mapToModel(model: Species?): SpeciesModel =
+            SpeciesModel(
+                id = model?.id,
+                name = model?.name
+            )
+    }
 }

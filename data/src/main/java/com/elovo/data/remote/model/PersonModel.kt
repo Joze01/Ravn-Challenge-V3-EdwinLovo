@@ -40,4 +40,21 @@ data class PersonModel(
         homeworld = homeworld?.mapToDomainModel(),
         species = species?.mapToDomainModel()
     )
+
+    companion object {
+        fun mapToModel(model: Person): PersonModel =
+            PersonModel(
+                id = model.id,
+                name = model.name,
+                eyeColor = model.eyeColor,
+                hairColor = model.hairColor,
+                skinColor = model.skinColor,
+                birthYear = model.birthYear,
+                vehicleConnection = VehicleConnectionModel(
+                    vehicles = model.vehicleConnection?.map { VehicleModel.mapToModel(it) }
+                ),
+                homeworld = HomeworldModel.mapToModel(model.homeworld),
+                species = SpeciesModel.mapToModel(model.species)
+            )
+    }
 }
