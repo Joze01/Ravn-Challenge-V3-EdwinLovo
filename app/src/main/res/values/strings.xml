@@ -9,6 +9,8 @@
     <string name="cd_bottom_tab">%s bottom tab</string>
     <string name="cd_go_back">Go back button</string>
     <string name="cd_select_person">Go to %s details</string>
+    <string name="cd_add_favorite">Add to favorites</string>
+    <string name="cd_remove_favorite">Remove from favorites</string>
 
     <!-- People -->
     <string name="title_people">People</string>
