@@ -20,7 +20,8 @@ data class PersonEntity(
     val birthYear: String?,
     val vehicleConnection: VehicleConnectionModel?,
     val homeworld: HomeworldModel?,
-    val species: SpeciesModel?
+    val species: SpeciesModel?,
+    var isFavorite: Boolean? = null
 ) : ApiModelMapper<PersonModel> {
 
     override fun mapToApiModel(): PersonModel = GsonHelper.parse(this)

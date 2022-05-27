@@ -5,6 +5,8 @@ import com.elovo.domain.interactor.usecase.GetPeopleUseCase
 import com.elovo.domain.interactor.usecase.GetPeopleUseCaseImpl
 import com.elovo.domain.interactor.usecase.GetPersonUseCase
 import com.elovo.domain.interactor.usecase.GetPersonUseCaseImpl
+import com.elovo.domain.interactor.usecase.UpdateFavoriteStatusUseCase
+import com.elovo.domain.interactor.usecase.UpdateFavoriteStatusUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,4 +26,10 @@ object UseCaseModule {
     @ViewModelScoped
     fun getPersonUseCaseProvider(personRepository: PersonRepository): GetPersonUseCase =
         GetPersonUseCaseImpl(personRepository)
+
+    @Provides
+    @ViewModelScoped
+    fun updateFavoriteStatusUseCaseProvider(
+        personRepository: PersonRepository
+    ): UpdateFavoriteStatusUseCase = UpdateFavoriteStatusUseCaseImpl(personRepository)
 }

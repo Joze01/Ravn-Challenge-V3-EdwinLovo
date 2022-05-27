@@ -4,12 +4,15 @@ import com.elovo.data.datasource.PeopleRemote
 import com.elovo.data.db.dao.PersonDao
 import com.elovo.data.remote.model.PersonModel
 import com.elovo.data.repository.base.BaseRepository
+import com.elovo.domain.common.DataSourceException
+import com.elovo.domain.common.RavnException
 import com.elovo.domain.common.RavnResult
 import com.elovo.domain.common.onMapping
 import com.elovo.domain.interactor.repository.PersonRepository
 import com.elovo.domain.model.AllPeople
 import com.elovo.domain.model.Person
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class PersonRepositoryImpl @Inject constructor(
@@ -34,6 +37,15 @@ class PersonRepositoryImpl @Inject constructor(
                 personDao.getPerson(personId)?.mapToApiModel()
             }
         )
+
+    override fun updateFavoriteStatus(personId: String, isFavorite: Boolean): Flow<RavnResult<Person>> {
+        personDao.updateFavoriteStatus(personId = personId, isFavorite = isFavorite)
+        return personDao.getPersonWithFlow(personId).map { person ->
+            person?.let {
+                RavnResult.Success(it.mapToApiModel().mapToDomainModel())
+            } ?: RavnResult.Error(DataSourceException.Unexpected(RavnException.UNKNOWN_ERROR))
+        }
+    }
 
     companion object {
         const val PAGE_SIZE = 5

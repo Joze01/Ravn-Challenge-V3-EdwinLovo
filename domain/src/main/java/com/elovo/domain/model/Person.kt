@@ -9,5 +9,6 @@ data class Person(
     val birthYear: String? = "",
     val vehicleConnection: List<Vehicle?>? = null,
     val homeworld: Homeworld? = null,
-    val species: Species? = null
+    val species: Species? = null,
+    val isFavorite: Boolean? = null
 )

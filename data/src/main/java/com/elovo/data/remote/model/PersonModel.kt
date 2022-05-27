@@ -15,7 +15,8 @@ data class PersonModel(
     val birthYear: String?,
     val vehicleConnection: VehicleConnectionModel?,
     val homeworld: HomeworldModel?,
-    val species: SpeciesModel?
+    val species: SpeciesModel?,
+    val isFavorite: Boolean? = null
 ) : RoomMapper<PersonEntity>, DomainModelMapper<Person> {
 
     override fun mapToRoomEntity(): PersonEntity = GsonHelper.parse(this)
@@ -29,7 +30,8 @@ data class PersonModel(
         birthYear = birthYear,
         vehicleConnection = vehicleConnection?.vehicles?.map { it?.mapToDomainModel() },
         homeworld = homeworld?.mapToDomainModel(),
-        species = species?.mapToDomainModel()
+        species = species?.mapToDomainModel(),
+        isFavorite = isFavorite
     )
 
     companion object {
@@ -45,7 +47,8 @@ data class PersonModel(
                     vehicles = model.vehicleConnection?.map { VehicleModel.mapToModel(it) }
                 ),
                 homeworld = HomeworldModel.mapToModel(model.homeworld),
-                species = SpeciesModel.mapToModel(model.species)
+                species = SpeciesModel.mapToModel(model.species),
+                isFavorite = model.isFavorite
             )
     }
 }
