@@ -1,4 +1,4 @@
-package com.elovo.data.mapper
+package com.elovo.data.util.mapper
 
 interface RoomMapper<out T : Any> {
     fun mapToRoomEntity(): T

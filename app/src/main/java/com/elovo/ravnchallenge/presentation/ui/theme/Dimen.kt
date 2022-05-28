@@ -1,4 +1,4 @@
-package com.elovo.ravnchallenge.ui.theme
+package com.elovo.ravnchallenge.presentation.ui.theme
 
 import androidx.compose.ui.unit.dp
 

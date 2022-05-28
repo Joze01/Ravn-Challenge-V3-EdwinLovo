@@ -1,4 +1,4 @@
-package com.elovo.data.datasource.base
+package com.elovo.data.remote.datasource.base
 
 import android.util.Log
 import com.apollographql.apollo3.api.ApolloResponse

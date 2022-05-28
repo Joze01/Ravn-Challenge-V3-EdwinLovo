@@ -6,7 +6,7 @@ import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.elovo.ravnchallenge.ui.theme.DividerColor
+import com.elovo.ravnchallenge.presentation.ui.theme.DividerColor
 
 @Composable
 fun RavnDivider(

@@ -1,7 +1,7 @@
 package com.elovo.data.di
 
-import com.elovo.data.datasource.PeopleRemote
 import com.elovo.data.db.dao.PersonDao
+import com.elovo.data.remote.datasource.PeopleRemote
 import com.elovo.data.repository.PersonRepositoryImpl
 import com.elovo.domain.interactor.repository.PersonRepository
 import dagger.Module

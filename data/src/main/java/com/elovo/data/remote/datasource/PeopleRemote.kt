@@ -1,4 +1,4 @@
-package com.elovo.data.datasource
+package com.elovo.data.remote.datasource
 
 import com.elovo.data.remote.model.AllPeopleModel
 import com.elovo.data.remote.model.PersonModel

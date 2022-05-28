@@ -1,6 +1,6 @@
 package com.elovo.data.remote.model
 
-import com.elovo.data.mapper.DomainModelMapper
+import com.elovo.data.util.mapper.DomainModelMapper
 import com.elovo.domain.model.AllPeople
 import com.elovo.domain.model.Person
 

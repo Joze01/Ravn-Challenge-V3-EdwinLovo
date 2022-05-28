@@ -1,9 +1,9 @@
 package com.elovo.data.remote.model
 
 import com.elovo.data.db.model.PersonEntity
-import com.elovo.data.mapper.DomainModelMapper
-import com.elovo.data.mapper.RoomMapper
 import com.elovo.data.util.GsonHelper
+import com.elovo.data.util.mapper.DomainModelMapper
+import com.elovo.data.util.mapper.RoomMapper
 import com.elovo.domain.model.Person
 
 data class PersonModel(

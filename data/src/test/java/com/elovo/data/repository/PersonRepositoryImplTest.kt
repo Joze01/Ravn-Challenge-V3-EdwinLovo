@@ -1,10 +1,10 @@
 package com.elovo.data.repository
 
 import app.cash.turbine.test
-import com.elovo.data.datasource.FakePeopleRemoteImpl
 import com.elovo.data.db.dao.PersonDao
-import com.elovo.data.mapper.mapToModel
 import com.elovo.data.personApolloModel
+import com.elovo.data.remote.datasource.FakePeopleRemoteImpl
+import com.elovo.data.util.mapper.mapToModel
 import com.elovo.domain.common.DataSourceException
 import com.elovo.domain.common.onError
 import com.elovo.domain.common.onSuccess

@@ -37,10 +37,16 @@ ext {
     koverIncludedPackages = ['com.elovo.ravnchallenge.*', 'com.elovo.data.*', 'com.elovo.domain.*']
     koverExcludedPackages = [
             'com.elovo.ravnchallenge.BuildConfig',
+            'com.elovo.ravnchallenge.RavnChallengeApp',
+            'com.elovo.ravnchallenge.presentation.ui.theme.*',
+            'com.elovo.ravnchallenge.presentation.di.*',
             'com.elovo.data.BuildConfig',
             'com.elovo.domain.BuildConfig',
             'com.elovo.data.di.*',
             'com.elovo.domain.di.*',
+            'com.elovo.ravnchallenge.*.*_Factory',
+            'com.elovo.ravnchallenge.*.*_HiltModules*',
+            'com.elovo.ravnchallenge.*.*_MembersInjector*',
             'dagger.hilt.internal.aggregatedroot.codegen.*',
             'hilt_aggregated_deps.*'
     ]

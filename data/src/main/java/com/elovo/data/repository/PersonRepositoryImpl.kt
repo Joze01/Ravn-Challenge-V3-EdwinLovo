@@ -1,7 +1,7 @@
 package com.elovo.data.repository
 
-import com.elovo.data.datasource.PeopleRemote
 import com.elovo.data.db.dao.PersonDao
+import com.elovo.data.remote.datasource.PeopleRemote
 import com.elovo.data.remote.model.PersonModel
 import com.elovo.data.repository.base.BaseRepository
 import com.elovo.domain.common.DataSourceException

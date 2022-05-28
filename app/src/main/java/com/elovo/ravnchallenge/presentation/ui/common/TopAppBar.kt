@@ -18,7 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import com.elovo.ravnchallenge.R
-import com.elovo.ravnchallenge.ui.theme.RavnTypography
+import com.elovo.ravnchallenge.presentation.ui.theme.RavnTypography
 
 @Composable
 fun RavnAppBar(

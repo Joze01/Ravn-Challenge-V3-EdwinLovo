@@ -1,13 +1,13 @@
-package com.elovo.data.datasource
+package com.elovo.data.remote.datasource
 
 import com.elovo.apollo.GetAllPeopleQuery
 import com.elovo.apollo.GetPersonQuery
 import com.elovo.data.allApolloPeople
-import com.elovo.data.datasource.base.BaseRemote
-import com.elovo.data.mapper.mapToModel
 import com.elovo.data.personApolloModel
+import com.elovo.data.remote.datasource.base.BaseRemote
 import com.elovo.data.remote.model.AllPeopleModel
 import com.elovo.data.remote.model.PersonModel
+import com.elovo.data.util.mapper.mapToModel
 import com.elovo.domain.common.DataSourceException
 import com.elovo.domain.common.RavnException
 import com.elovo.domain.common.RavnResult

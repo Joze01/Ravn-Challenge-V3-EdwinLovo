@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.elovo.ravnchallenge.ui.theme.LargePadding
-import com.elovo.ravnchallenge.ui.theme.NoPadding
+import com.elovo.ravnchallenge.presentation.ui.theme.LargePadding
+import com.elovo.ravnchallenge.presentation.ui.theme.NoPadding
 
 @Composable
 fun BodyLayout(

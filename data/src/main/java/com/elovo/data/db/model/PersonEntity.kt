@@ -2,12 +2,12 @@ package com.elovo.data.db.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.elovo.data.mapper.ApiModelMapper
 import com.elovo.data.remote.model.HomeworldModel
 import com.elovo.data.remote.model.PersonModel
 import com.elovo.data.remote.model.SpeciesModel
 import com.elovo.data.remote.model.VehicleConnectionModel
 import com.elovo.data.util.GsonHelper
+import com.elovo.data.util.mapper.ApiModelMapper
 
 @Entity
 data class PersonEntity(

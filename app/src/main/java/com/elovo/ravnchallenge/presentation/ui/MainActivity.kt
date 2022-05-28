@@ -12,7 +12,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import com.elovo.ravnchallenge.presentation.navigation.navgraph.Navigation
 import com.elovo.ravnchallenge.presentation.ui.common.bottombar.BottomBarView
-import com.elovo.ravnchallenge.ui.theme.RavnChallengeTheme
+import com.elovo.ravnchallenge.presentation.ui.theme.RavnChallengeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

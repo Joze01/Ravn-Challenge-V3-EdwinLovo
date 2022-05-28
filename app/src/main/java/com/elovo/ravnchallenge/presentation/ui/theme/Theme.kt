@@ -1,4 +1,4 @@
-package com.elovo.ravnchallenge.ui.theme
+package com.elovo.ravnchallenge.presentation.ui.theme
 
 import android.annotation.SuppressLint
 import androidx.compose.material.MaterialTheme

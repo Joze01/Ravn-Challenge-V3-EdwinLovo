@@ -20,10 +20,10 @@ import com.elovo.domain.model.Homeworld
 import com.elovo.domain.model.Person
 import com.elovo.ravnchallenge.R
 import com.elovo.ravnchallenge.presentation.ui.common.RavnDivider
-import com.elovo.ravnchallenge.ui.theme.MediumPadding
-import com.elovo.ravnchallenge.ui.theme.NoPadding
-import com.elovo.ravnchallenge.ui.theme.RavnChallengeTheme
-import com.elovo.ravnchallenge.ui.theme.RavnTypography
+import com.elovo.ravnchallenge.presentation.ui.theme.MediumPadding
+import com.elovo.ravnchallenge.presentation.ui.theme.NoPadding
+import com.elovo.ravnchallenge.presentation.ui.theme.RavnChallengeTheme
+import com.elovo.ravnchallenge.presentation.ui.theme.RavnTypography
 
 @Composable
 fun PersonCell(

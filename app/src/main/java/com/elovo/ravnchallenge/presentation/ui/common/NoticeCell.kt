@@ -8,8 +8,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.elovo.ravnchallenge.ui.theme.MediumPadding
-import com.elovo.ravnchallenge.ui.theme.RavnTypography
+import com.elovo.ravnchallenge.presentation.ui.theme.MediumPadding
+import com.elovo.ravnchallenge.presentation.ui.theme.RavnTypography
 
 @Composable
 fun NoticeCell(

@@ -1,6 +1,6 @@
 package com.elovo.data.repository.base
 
-import com.elovo.data.mapper.DomainModelMapper
+import com.elovo.data.util.mapper.DomainModelMapper
 import com.elovo.domain.common.DataSourceException
 import com.elovo.domain.common.RavnException
 import com.elovo.domain.common.RavnResult

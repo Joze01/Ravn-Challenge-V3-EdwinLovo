@@ -28,9 +28,9 @@ import com.elovo.ravnchallenge.presentation.ui.common.LoadingCell
 import com.elovo.ravnchallenge.presentation.ui.common.NoticeCell
 import com.elovo.ravnchallenge.presentation.ui.common.RavnAppBar
 import com.elovo.ravnchallenge.presentation.ui.common.SectionHeader
+import com.elovo.ravnchallenge.presentation.ui.theme.MediumPadding
+import com.elovo.ravnchallenge.presentation.ui.theme.RavnTypography
 import com.elovo.ravnchallenge.presentation.utils.UiEvent
-import com.elovo.ravnchallenge.ui.theme.MediumPadding
-import com.elovo.ravnchallenge.ui.theme.RavnTypography
 import kotlinx.coroutines.flow.collect
 
 @Composable

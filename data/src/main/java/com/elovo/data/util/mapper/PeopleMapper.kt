@@ -1,4 +1,4 @@
-package com.elovo.data.mapper
+package com.elovo.data.util.mapper
 
 import com.elovo.apollo.GetAllPeopleQuery
 import com.elovo.apollo.GetPersonQuery

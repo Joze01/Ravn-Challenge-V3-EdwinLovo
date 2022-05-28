@@ -1,8 +1,8 @@
 package com.elovo.data.di
 
-import com.elovo.data.datasource.PeopleRemote
-import com.elovo.data.datasource.PeopleRemoteImpl
 import com.elovo.data.remote.SwapiApi
+import com.elovo.data.remote.datasource.PeopleRemote
+import com.elovo.data.remote.datasource.PeopleRemoteImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

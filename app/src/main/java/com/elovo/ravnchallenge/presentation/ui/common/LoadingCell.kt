@@ -11,10 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.elovo.ravnchallenge.ui.theme.LightTextColor
-import com.elovo.ravnchallenge.ui.theme.MediumPadding
-import com.elovo.ravnchallenge.ui.theme.RavnTypography
-import com.elovo.ravnchallenge.ui.theme.SmallPadding
+import com.elovo.ravnchallenge.presentation.ui.theme.LightTextColor
+import com.elovo.ravnchallenge.presentation.ui.theme.MediumPadding
+import com.elovo.ravnchallenge.presentation.ui.theme.RavnTypography
+import com.elovo.ravnchallenge.presentation.ui.theme.SmallPadding
 
 @Composable
 fun LoadingCell(

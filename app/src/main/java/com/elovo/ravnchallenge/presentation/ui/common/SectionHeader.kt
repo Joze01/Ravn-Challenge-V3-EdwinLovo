@@ -6,10 +6,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
-import com.elovo.ravnchallenge.ui.theme.ExtraLargePadding
-import com.elovo.ravnchallenge.ui.theme.MediumPadding
-import com.elovo.ravnchallenge.ui.theme.RavnTypography
-import com.elovo.ravnchallenge.ui.theme.SmallPadding
+import com.elovo.ravnchallenge.presentation.ui.theme.ExtraLargePadding
+import com.elovo.ravnchallenge.presentation.ui.theme.MediumPadding
+import com.elovo.ravnchallenge.presentation.ui.theme.RavnTypography
+import com.elovo.ravnchallenge.presentation.ui.theme.SmallPadding
 
 @Composable
 fun SectionHeader(message: String) {
