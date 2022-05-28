@@ -31,7 +31,6 @@ class PersonViewModel @Inject constructor(
     fun onEvent(event: PersonEvent) {
         when (event) {
             is PersonEvent.OnUpdateFavoriteStatus -> {
-                var error = false
                 executeUseCase(checkConnection = false) {
                     updateFavoriteStatusUseCase(
                         personId = personId,
@@ -41,15 +40,14 @@ class PersonViewModel @Inject constructor(
                         result.onSuccess {
                             person = it
                             isLoading = false
-                            error = false
                         }
                         result.onError {
-                            error = true
+                            errorOccurred = true
                             sendUiEvent(UiEvent.ShowSnackBar(R.string.common_error))
                         }
                     }
                 }
-                if (!error) {
+                if (!errorOccurred) {
                     sendUiEvent(
                         UiEvent.ShowSnackBar(
                             if (event.isFavorite) R.string.person_favorite_added
@@ -70,6 +68,8 @@ class PersonViewModel @Inject constructor(
                     isLoading = false
                 }
                 result.onError {
+                    isLoading = false
+                    errorOccurred = true
                 }
             }
         }
