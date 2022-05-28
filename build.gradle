@@ -50,6 +50,9 @@ ext {
             'com.elovo.domain.*.*_Factory',
             'com.elovo.domain.*.*_HiltModules*',
             'com.elovo.domain.*.*_MembersInjector*',
+            'com.elovo.data.*.*_Factory',
+            'com.elovo.data.*.*_HiltModules*',
+            'com.elovo.data.*.*_MembersInjector*',
             'dagger.hilt.internal.aggregatedroot.codegen.*',
             'hilt_aggregated_deps.*'
     ]
