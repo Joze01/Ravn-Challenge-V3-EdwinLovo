@@ -22,7 +22,6 @@ import org.mockito.kotlin.mock
 class PersonRepositoryImplTest {
     private lateinit var fakePeopleRemote: FakePeopleRemoteImpl
     private lateinit var personDao: PersonDao
-
     private lateinit var personRepository: PersonRepository
 
     @Before
@@ -32,6 +31,7 @@ class PersonRepositoryImplTest {
             on { getFavorites() } doReturn flow {
                 emit(listOf(personApolloModel.mapToModel().mapToRoomEntity()))
             }
+            on { getPersonWithFlow("1") } doReturn flow { emit(null) }
         }
         personRepository = PersonRepositoryImpl(fakePeopleRemote, personDao)
     }
@@ -86,10 +86,9 @@ class PersonRepositoryImplTest {
         }
     }
 
-    /*@Test
+    @Test
     fun test_updateFavoriteStatus_for_invalid_id() {
         runTest {
-            personDao.insertPerson(personApolloModel.mapToModel().mapToRoomEntity())
             personRepository.updateFavoriteStatus("1", true).test {
                 val item = awaitItem()
                 item.onError {
@@ -98,5 +97,5 @@ class PersonRepositoryImplTest {
                 cancelAndIgnoreRemainingEvents()
             }
         }
-    }*/
+    }
 }
