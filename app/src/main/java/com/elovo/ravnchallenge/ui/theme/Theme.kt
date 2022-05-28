@@ -1,7 +1,6 @@
 package com.elovo.ravnchallenge.ui.theme
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
@@ -23,7 +22,6 @@ private val LightColorPalette = lightColors(
 
 @Composable
 fun RavnChallengeTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
 

@@ -58,6 +58,7 @@ dependencies {
     implementation rootProject.ext.common.core_ktlx
     implementation rootProject.ext.common.appcompat
     implementation rootProject.ext.common.material
+    implementation rootProject.ext.common.splash_screen
 
     // Compose
     implementation rootProject.ext.compose.compose_ui
