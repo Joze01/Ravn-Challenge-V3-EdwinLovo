@@ -1,10 +1,15 @@
 package com.elovo.ravnchallenge.presentation.ui.favorites
 
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.elovo.ravnchallenge.R
 import com.elovo.ravnchallenge.presentation.navigation.Screen
@@ -12,6 +17,8 @@ import com.elovo.ravnchallenge.presentation.ui.common.BodyLayout
 import com.elovo.ravnchallenge.presentation.ui.common.RavnAppBar
 import com.elovo.ravnchallenge.presentation.ui.people.components.PersonCell
 import com.elovo.ravnchallenge.presentation.utils.UiEvent
+import com.elovo.ravnchallenge.ui.theme.MediumPadding
+import com.elovo.ravnchallenge.ui.theme.RavnTypography
 import kotlinx.coroutines.flow.collect
 
 @Composable
@@ -47,6 +54,16 @@ fun FavoritesScreen(
                     }
                 )
             }
+        }
+        if (viewModel.favorites.isEmpty()) {
+            Text(
+                text = stringResource(id = R.string.favorites_empty),
+                style = RavnTypography.h2LowEmphasis,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(MediumPadding)
+            )
         }
     }
 }
