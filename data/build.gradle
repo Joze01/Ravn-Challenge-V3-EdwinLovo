@@ -40,6 +40,8 @@ dependencies {
 
     // Apollo
     api rootProject.ext.apollo.apollo_runtime
+    implementation rootProject.ext.apollo.apollo_normalized_cache
+    implementation rootProject.ext.apollo.apollo_normalized_cache_sqlite
 
     // OkHttp
     api rootProject.ext.apollo.okhttp_loggin_interceptor

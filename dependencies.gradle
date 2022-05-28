@@ -46,7 +46,9 @@ ext {
     // GraphQL client dependencies
     apollo = [
             apollo_runtime: "com.apollographql.apollo3:apollo-runtime:${apollo_version}",
-            okhttp_loggin_interceptor: "com.squareup.okhttp3:logging-interceptor:${okhttp_interceptor_version}"
+            okhttp_loggin_interceptor: "com.squareup.okhttp3:logging-interceptor:${okhttp_interceptor_version}",
+            apollo_normalized_cache_sqlite : "com.apollographql.apollo3:apollo-normalized-cache-sqlite:${apollo_version}",
+            apollo_normalized_cache : "com.apollographql.apollo3:apollo-normalized-cache:${apollo_version}"
     ]
 
     // Common:

@@ -1,6 +1,9 @@
 package com.elovo.data.di
 
+import android.content.Context
 import com.apollographql.apollo3.ApolloClient
+import com.apollographql.apollo3.cache.normalized.normalizedCache
+import com.apollographql.apollo3.cache.normalized.sql.SqlNormalizedCacheFactory
 import com.apollographql.apollo3.network.okHttpClient
 import com.elovo.data.BuildConfig
 import com.elovo.data.remote.BASE_URL
@@ -8,6 +11,7 @@ import com.elovo.data.remote.SwapiApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -44,12 +48,15 @@ internal class ApiModule {
     @Provides
     @Singleton
     fun apolloClientProvider(
-        okHttpClient: OkHttpClient
-    ): ApolloClient =
-        ApolloClient.Builder()
-            .serverUrl(BASE_URL)
-            .okHttpClient(okHttpClient)
-            .build()
+        okHttpClient: OkHttpClient,
+        @ApplicationContext context: Context
+    ): ApolloClient = ApolloClient.Builder()
+        .serverUrl(BASE_URL)
+        .okHttpClient(okHttpClient)
+        .normalizedCache(
+            SqlNormalizedCacheFactory(context.applicationContext, "sw_ravn.db")
+        )
+        .build()
 
     @Provides
     @Singleton
