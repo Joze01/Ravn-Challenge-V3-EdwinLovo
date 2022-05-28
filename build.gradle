@@ -47,6 +47,9 @@ ext {
             'com.elovo.ravnchallenge.*.*_Factory',
             'com.elovo.ravnchallenge.*.*_HiltModules*',
             'com.elovo.ravnchallenge.*.*_MembersInjector*',
+            'com.elovo.domain.*.*_Factory',
+            'com.elovo.domain.*.*_HiltModules*',
+            'com.elovo.domain.*.*_MembersInjector*',
             'dagger.hilt.internal.aggregatedroot.codegen.*',
             'hilt_aggregated_deps.*'
     ]
