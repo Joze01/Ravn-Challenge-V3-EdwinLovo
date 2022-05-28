@@ -24,6 +24,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.elovo.ravnchallenge.R
 import com.elovo.ravnchallenge.presentation.ui.common.BodyLayout
 import com.elovo.ravnchallenge.presentation.ui.common.DataCell
+import com.elovo.ravnchallenge.presentation.ui.common.LoadingCell
+import com.elovo.ravnchallenge.presentation.ui.common.NoticeCell
 import com.elovo.ravnchallenge.presentation.ui.common.RavnAppBar
 import com.elovo.ravnchallenge.presentation.ui.common.SectionHeader
 import com.elovo.ravnchallenge.presentation.utils.UiEvent
@@ -63,45 +65,58 @@ fun PersonScreen(
         },
         hasPadding = false
     ) {
-        SectionHeader(message = stringResource(id = R.string.person_general_info))
-        Column(modifier = Modifier.padding(start = MediumPadding)) {
-            DataCell(
-                label = stringResource(id = R.string.person_eye_color),
-                value = viewModel.person?.eyeColor
-            )
-            DataCell(
-                label = stringResource(id = R.string.person_hair_color),
-                value = viewModel.person?.hairColor
-            )
-            DataCell(
-                label = stringResource(id = R.string.person_skin_color),
-                value = viewModel.person?.skinColor
-            )
-            DataCell(
-                label = stringResource(id = R.string.person_birth_year),
-                value = viewModel.person?.birthYear
-            )
+        viewModel.person?.let {
+            PersonDetails(viewModel = viewModel)
         }
-        SectionHeader(message = stringResource(id = R.string.person_vehicles))
-        Column(modifier = Modifier.padding(start = MediumPadding)) {
-            viewModel.person?.vehicleConnection?.forEach { vehicle ->
-                vehicle?.let {
-                    DataCell(
-                        label = it.name ?: ""
-                    )
-                }
-            }
-            if (viewModel.person?.vehicleConnection?.isEmpty() == true) {
-                Text(
-                    text = stringResource(id = R.string.person_no_vehicles),
-                    style = RavnTypography.h2LowEmphasis,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth()
+        if (viewModel.isLoading) {
+            LoadingCell(message = stringResource(id = R.string.common_loading))
+        }
+        if (viewModel.errorOccurred) {
+            NoticeCell(message = stringResource(id = R.string.common_failed_to_load_data))
+        }
+    }
+}
+
+@Composable
+private fun PersonDetails(viewModel: PersonViewModel) {
+    SectionHeader(message = stringResource(id = R.string.person_general_info))
+    Column(modifier = Modifier.padding(start = MediumPadding)) {
+        DataCell(
+            label = stringResource(id = R.string.person_eye_color),
+            value = viewModel.person?.eyeColor
+        )
+        DataCell(
+            label = stringResource(id = R.string.person_hair_color),
+            value = viewModel.person?.hairColor
+        )
+        DataCell(
+            label = stringResource(id = R.string.person_skin_color),
+            value = viewModel.person?.skinColor
+        )
+        DataCell(
+            label = stringResource(id = R.string.person_birth_year),
+            value = viewModel.person?.birthYear
+        )
+    }
+    SectionHeader(message = stringResource(id = R.string.person_vehicles))
+    Column(modifier = Modifier.padding(start = MediumPadding)) {
+        viewModel.person?.vehicleConnection?.forEach { vehicle ->
+            vehicle?.let {
+                DataCell(
+                    label = it.name ?: ""
                 )
             }
         }
-        FavoriteButton(viewModel = viewModel)
+        if (viewModel.person?.vehicleConnection?.isEmpty() == true) {
+            Text(
+                text = stringResource(id = R.string.person_no_vehicles),
+                style = RavnTypography.h2LowEmphasis,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
     }
+    FavoriteButton(viewModel = viewModel)
 }
 
 @Composable

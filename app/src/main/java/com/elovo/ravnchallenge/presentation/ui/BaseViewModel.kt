@@ -18,6 +18,7 @@ import javax.inject.Inject
 open class BaseViewModel : ViewModel() {
 
     var isLoading by mutableStateOf(false)
+    var errorOccurred by mutableStateOf(false)
 
     @Inject
     protected lateinit var connectivity: Connectivity
