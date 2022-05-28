@@ -40,4 +40,15 @@ dependencies {
     kapt rootProject.ext.dependency_injection.hilt_compiler
 
     implementation rootProject.ext.compose.paging_compose
+
+    // Testing
+    testImplementation rootProject.ext.testCommon.junit
+    testImplementation rootProject.ext.testCommon.mockito_core
+    testImplementation rootProject.ext.testCommon.mockito_kotlin
+    testImplementation rootProject.ext.testCommon.coroutines_test
+    testImplementation rootProject.ext.testCommon.turbine_flows
+    androidTestImplementation rootProject.ext.testCommon.turbine_flows
+    androidTestImplementation rootProject.ext.testCommon.coroutines_test
+    androidTestImplementation rootProject.ext.testCommon.junit_ext
+    androidTestImplementation rootProject.ext.testCommon.espresso_core
 }
