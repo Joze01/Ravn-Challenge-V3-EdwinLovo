@@ -21,6 +21,8 @@ ext {
     mockito_kotlin_version = "4.0.0"
     coroutines_test_version = "1.6.1"
     turbine_version = "0.8.0"
+    test_core_version = "1.2.0"
+    robolectric_version = '4.6'
 
     // Hilt
     hilt_version = '2.41'
@@ -96,7 +98,9 @@ ext {
             mockito_core: "org.mockito:mockito-core:${mockito_version}",
             mockito_kotlin: "org.mockito.kotlin:mockito-kotlin:${mockito_kotlin_version}",
             coroutines_test: "org.jetbrains.kotlinx:kotlinx-coroutines-test:${coroutines_test_version}",
-            turbine_flows: "app.cash.turbine:turbine:${turbine_version}"
+            turbine_flows: "app.cash.turbine:turbine:${turbine_version}",
+            test_core: "androidx.test:core:${test_core_version}",
+            robolectric: "org.robolectric:robolectric:${robolectric_version}"
     ]
 
     //  Hilt
